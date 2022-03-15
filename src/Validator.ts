@@ -3,7 +3,7 @@ import {Digits, Sudoku} from "../types";
 export class Validator {
     public static readonly DIGIT_COUNT = 9
     public static readonly BOX_COUNT_PER_AXIS = 3
-    public static readonly DIGIT_COUNT_PER_AXIS = 3
+    public static readonly BOX_SIZE = 3
 
     static validateSudoku(sudoku: Sudoku) {
         for(let r = 0; r < this.DIGIT_COUNT; r++)

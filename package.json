@@ -5,7 +5,6 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "ts-node-dev src/index.ts",
     "test": "mocha -r ts-node/register tests/*"
   },
   "keywords": [],
