@@ -6,12 +6,13 @@
   "type": "module",
   "scripts": {
     "start": "ts-node-dev src/index.ts",
-    "test": "node --experimental-vm-modules node_modules/mocha/bin/mocha"
+    "test": "mocha -r ts-node/register tests/*"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.3.6",
     "mocha": "^9.2.2"
   },
   "devDependencies": {
