@@ -1,10 +1,17 @@
-import {Digits} from "../types";
+import {Digits, Sudoku} from "../types";
 
 export class Validator {
     public static readonly DIGIT_COUNT = 9
 
-    static validateSudoku() {
+    static validateSudoku(sudoku: Sudoku) {
+        for(let r = 0; r < this.DIGIT_COUNT; r++)
+            if(!this.validateRow(sudoku, r))
+                return false
+        return true
+    }
 
+    static validateRow(sudoku: Sudoku, rowIndex: number): Boolean {
+        return this.areDigitsComplete(sudoku[rowIndex]);
     }
 
     static areDigitsComplete(digits: Digits): Boolean {
