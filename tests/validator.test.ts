@@ -10,6 +10,7 @@ describe("Validate sudoku", (() => {
         expect(Validator.areDigitsComplete(validDigits)).to.equal(true)
         expect(Validator.areDigitsComplete(invalidDigits)).to.equal(false)
     }))
+
     it("should validate sudoku array",(() => {
         const validSudoku = [
             [5, 3, 4, 6, 7, 8, 9, 1, 2],
@@ -56,7 +57,7 @@ describe("Validate sudoku", (() => {
     }))
 
     it("should detect invalid sudoku with dodgy squares", (() => {
-        const invalidSudokuSquare = [
+        const invalidSudokuBadSquare = [
             [1, 2, 3, 4, 5, 6, 7, 8, 9],
             [2, 3, 4, 5, 6, 7, 8, 9, 1],
             [3, 4, 5, 6, 7, 8, 9, 1, 2],
@@ -67,6 +68,6 @@ describe("Validate sudoku", (() => {
             [8, 9, 1, 2, 3, 4, 5, 6, 7],
             [9, 1, 2, 3, 4, 5, 6, 7, 8]
         ]
-        expect(Validator.validateSudoku(invalidSudokuSquare)).to.equal(false)
+        expect(Validator.validateSudoku(invalidSudokuBadSquare)).to.equal(false)
     }))
 }))

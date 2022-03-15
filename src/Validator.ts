@@ -19,18 +19,18 @@ export class Validator {
         return true
     }
 
-    static validateRow(sudoku: Sudoku, rowIndex: number): Boolean {
+    private static validateRow(sudoku: Sudoku, rowIndex: number): Boolean {
         return this.areDigitsComplete(sudoku[rowIndex]);
     }
 
-    static validateColumn(sudoku: Sudoku, columnIndex: number): Boolean {
+    private static validateColumn(sudoku: Sudoku, columnIndex: number): Boolean {
         const column = []
         for(let r = 0; r < this.DIGIT_COUNT; r++)
             column.push(sudoku[r][columnIndex])
         return this.areDigitsComplete(column);
     }
 
-    static validateBox(sudoku: Sudoku, boxRowIndex: number, boxColumnIndex: number): Boolean {
+    private static validateBox(sudoku: Sudoku, boxRowIndex: number, boxColumnIndex: number): Boolean {
         const digits = []
         for(let localDigitRowIndex = 0; localDigitRowIndex < this.BOX_SIZE; localDigitRowIndex++) {
             for (let localDigitColumnIndex = 0; localDigitColumnIndex < this.BOX_SIZE; localDigitColumnIndex++) {
